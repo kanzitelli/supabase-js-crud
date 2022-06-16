@@ -20,11 +20,9 @@
     "release:npm": "run-s build && npm publish --access public",
     "release:npm:next": "run-s build && npm publish --tag next"
   },
-  "keywords": [
-    "typescript",
-    "supabase",
-    "supabase-js"
-  ],
+  "dependencies": {
+    "@supabase/supabase-js": "^1.35.3"
+  },
   "devDependencies": {
     "dotenv-cli": "^5.1.0",
     "husky": "^8.0.1",
@@ -40,5 +38,10 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
+  "keywords": [
+    "typescript",
+    "supabase",
+    "supabase-js"
+  ],
   "license": "MIT"
 }
