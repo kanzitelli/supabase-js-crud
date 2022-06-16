@@ -73,21 +73,21 @@ export const addWhere = <T>(
     if (typeof where_value === 'object') {
       for (const wKey of Object.keys(where_value)) {
         const wValue = where_value[wKey];
-        const pfb_func = (pfb as any)[wKey]; // "as any" for ts
 
         if (filtersRegular.includes(wKey)) {
-          if (Array.isArray(wValue)) for (const wV of wValue) pfb = pfb_func(where_key, wV);
-          else pfb = pfb_func(where_key, wValue);
+          if (Array.isArray(wValue))
+            for (const wV of wValue) pfb = (pfb as any)[wKey](where_key, wV); // "as any" for ts
+          else pfb = (pfb as any)[wKey](where_key, wValue);
         }
 
         if (filtersDirect.includes(wKey)) {
-          pfb = pfb_func(where_key, wValue);
+          pfb = (pfb as any)[wKey](where_key, wValue);
         }
 
         if (filtersWithConditions.includes(wKey)) {
           if (Array.isArray(wValue))
-            for (const wV of wValue) pfb = pfb_func(where_key, wV.cond, wV.value);
-          else pfb = pfb_func(where_key, wValue.cond, wValue.value);
+            for (const wV of wValue) pfb = (pfb as any)[wKey](where_key, wV.cond, wV.value);
+          else pfb = (pfb as any)[wKey](where_key, wValue.cond, wValue.value);
         }
 
         if (filtersComplex.includes(wKey)) {
@@ -102,8 +102,8 @@ export const addWhere = <T>(
 
           if (wKey === 'textSearch') {
             if (Array.isArray(wValue))
-              for (const wV of wValue) pfb = pfb_func(where_key, wV.query, wV.params);
-            else pfb = pfb_func(where_key, wValue.query, wValue.params);
+              for (const wV of wValue) pfb = (pfb as any)[wKey](where_key, wV.query, wV.params);
+            else pfb = (pfb as any)[wKey](where_key, wValue.query, wValue.params);
           }
         }
       }
