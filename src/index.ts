@@ -14,7 +14,7 @@ import {
   UpdateParams,
 } from './types';
 
-export class DBTable<T> {
+export class DBTable<T = any> {
   private dbName: string;
   private sbClient: SupabaseClient;
 
