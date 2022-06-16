@@ -1,7 +1,7 @@
 {
   "name": "supabase-js-crud",
   "version": "0.0.0",
-  "description": "CRUD wrapper for Supabase (supabase-js).",
+  "description": "CRUD wrapper for Supabase tables (@supabase/supabase-js).",
   "author": "Batyr <dev@batyr.io>",
   "homepage": "https://github.com/kanzitelli/supabase-js-crud",
   "bugs": "https://github.com/kanzitelli/supabase-js-crud/issues",
