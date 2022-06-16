@@ -45,12 +45,35 @@ const oneProduct = await db.product.findOne({where: {id: '123456789'}});
 
 _TODO:_ add more detailed description for `params` and `options` types. For now, you can check them in types and they are mostly intuitive.
 
+## Global methods
+
+- `registerActions(...)` lets you register handlers for global actions such as `onError` that might be useful if you develop separate API server.
+
+```ts
+import {registerActions} from 'supabase-js-crud/dist/help';
+
+registerActions({
+  onError: error => {
+    throw new InternalServerErrorException(error);
+  },
+});
+```
+
+- `registerConstants(...)` lets you register global constants which are used in CRUD actions such as default value for `take`. By default, it's 25.
+
+```ts
+import {registerConstants} from 'supabase-js-crud/dist/help';
+
+registerConstants({
+  take: 50,
+});
+```
+
 ## Models
 
 You can also provide a model class to `DBTable` so IDEs will help with autocompletion.
 
 ```ts
-// let's say your model looks like this
 type Shop = {
   id: string;
   created_at: Date;
@@ -100,7 +123,7 @@ await db.product.find({
 - [ ] Better docs and more examples
 - [ ] Article with the library usage?
 
-Feel free to [open an issue](https://github.com/kanzitelli/supabase-js-crud/issues) for suggestions.
+Feel free to [open an issue](https://github.com/kanzitelli/supabase-js-crud/issues) for suggestions as the library is in the beginning stages.
 
 ## Troubleshooting
 
