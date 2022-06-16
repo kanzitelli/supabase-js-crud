@@ -1,6 +1,6 @@
 {
   "name": "supabase-js-crud",
-  "version": "0.0.1-rc.2",
+  "version": "0.0.1",
   "description": "CRUDify Supabase Tables.",
   "author": "Batyr <dev@batyr.io>",
   "homepage": "https://github.com/kanzitelli/supabase-js-crud",
