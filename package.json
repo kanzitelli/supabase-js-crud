@@ -1,7 +1,7 @@
 {
   "name": "supabase-js-crud",
   "version": "0.0.0",
-  "description": "CRUD wrapper for Supabase tables (@supabase/supabase-js).",
+  "description": "CRUDify your Supabase Tables.",
   "author": "Batyr <dev@batyr.io>",
   "homepage": "https://github.com/kanzitelli/supabase-js-crud",
   "bugs": "https://github.com/kanzitelli/supabase-js-crud/issues",
@@ -41,7 +41,9 @@
   "keywords": [
     "typescript",
     "supabase",
-    "supabase-js"
+    "supabase-js",
+    "supabase-db",
+    "supabase-table"
   ],
   "license": "MIT"
 }
