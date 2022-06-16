@@ -15,9 +15,9 @@
     "format": "prettier --write \"{src,}/**/*.ts\"",
     "build": "run-s clean format build:*",
     "build:main": "tsc -p tsconfig.json",
-    "release": "run-s release:github release:npm",
+    "release": "run-s build release:github release:npm",
     "release:github": "dotenv release-it",
-    "release:npm": "run-s build && npm publish --access public",
+    "release:npm": "npm publish --access public",
     "release:npm:next": "run-s build && npm publish --tag next"
   },
   "dependencies": {
