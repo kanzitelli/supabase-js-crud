@@ -76,7 +76,7 @@ export const addWhere = <T>(
 
         if (filtersRegular.includes(wKey)) {
           if (Array.isArray(wValue))
-            for (const wV of wValue) pfb = (pfb as any)[wKey](where_key, wV); // "as any" for ts
+            for (const wV of wValue) pfb = (pfb as any)[wKey](where_key, wV);
           else pfb = (pfb as any)[wKey](where_key, wValue);
         }
 
